@@ -57,7 +57,7 @@
       for (let book of this.data) {
         const ratingBgc = this.determineRatingBgc(book.rating);
         const ratingWidth = book.rating * 10;
-        const generatedHTML = this.template({ ...book, ratingBgc, ratingWidth });
+        const generatedHTML = this.template({ title: book.title, author: book.author, rating: book.rating, image: book.image, price: book.price, id: book.id, ratingBgc: ratingBgc, ratingWidth: ratingWidth });
         const elementDOM = utils.createDOMFromHTML(generatedHTML);
         this.booksList.appendChild(elementDOM);
       }
@@ -94,7 +94,9 @@
       }
     }
   }
-  
+  // eslint-disable-next-line no-unused-vars
   const app = new BooksList();
+  // eslint-disable-next-line no-unused-vars
+
   
 }
